@@ -1,8 +1,9 @@
 from PasswordGen import *
 
+
 def main():
     game_on = True
-    while game_on :
+    while game_on:
         print("Hello, Please enter the email of the password you want to generate.")
         while True:
             try:
@@ -15,13 +16,15 @@ def main():
                         toggle = True
 
                 if toggle:
-                    print("Sorry please enter their might be spaces in what you entered.  Please try again.")
+                    print(
+                        "Sorry please enter their might be spaces in what you entered.  Please try again.")
                 else:
                     well = confirming(user_input)
                     if well:
                         break
                     else:
-                        print("Please enter your email address to generate a password: ")
+                        print(
+                            "Please enter your email address to generate a password: ")
             except ValueError:
                 print("This is not a valid input.  Please try again.")
 
@@ -30,7 +33,8 @@ def main():
             try:
                 user_password_length = int(input())
                 if user_password_length < 8 or user_password_length > 16:
-                    print("Sorry please enter a integer between 8 - 16.  Please try again.")
+                    print(
+                        "Sorry please enter a integer between 8 - 16.  Please try again.")
                 else:
                     break
             except ValueError:
@@ -49,6 +53,9 @@ def main():
         ifstream.close()
 
         game_on = keep_playing()
+
+        if not game_on:
+            print("Encrypting")
 
 
 def confirming(name: str):
@@ -78,4 +85,3 @@ def keep_playing():
 
 
 main()
-
